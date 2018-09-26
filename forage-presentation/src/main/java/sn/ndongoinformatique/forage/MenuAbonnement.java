@@ -12,7 +12,7 @@ public class MenuAbonnement {
 		Scanner sc = new Scanner(System.in);
 		Abonnement abonnemenet;	
 		ClientForage clientForage;
-		Compteur compteur;
+		Compteur compteur;//represente un compteur
 		String en;
 
 		Boolean continuer = true;
