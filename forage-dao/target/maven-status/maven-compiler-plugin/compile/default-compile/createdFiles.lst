@@ -1,0 +1,12 @@
+sn\ndongoinformatique\forage\DaoUtilites.class
+sn\ndongoinformatique\forage\IDaoCompteur.class
+sn\ndongoinformatique\forage\IDaoAbonnement.class
+sn\ndongoinformatique\forage\IDaoVillage.class
+sn\ndongoinformatique\forage\IDaoVillageImpl.class
+sn\ndongoinformatique\forage\IDaoAbonnementImpl.class
+sn\ndongoinformatique\forage\IDaoClientForageImpl.class
+sn\ndongoinformatique\forage\IDaoClientForage.class
+sn\ndongoinformatique\forage\IDaoCompteurImpl.class
+sn\ndongoinformatique\forage\IDaoGenerique.class
+sn\ndongoinformatique\forage\IDaoFacture.class
+sn\ndongoinformatique\forage\IDaoFactureImpl.class

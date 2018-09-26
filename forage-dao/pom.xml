@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>sn.ndongoinformatique.forage</groupId>
+		<artifactId>forage</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<groupId>sn.ndongoinformatique.forage</groupId>
+	<artifactId>forage-dao</artifactId>
+	<name>forage-dao</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- =============================================================== -->
+	<!-- Dépendances -->
+	<!-- =============================================================== -->
+	<dependencies>
+		<!-- ===== Modules ===== -->
+		<dependency>
+			<groupId>sn.ndongoinformatique.forage</groupId>
+			<artifactId>forage-utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sn.ndongoinformatique.forage</groupId>
+			<artifactId>forage-domaine</artifactId>
+		</dependency>
+
+		<!-- ===== Bibliothèques tierces ===== -->
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+
+		</dependency>
+
+		<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				
+			</dependency>
+	
+	</dependencies>
+
+
+</project>
