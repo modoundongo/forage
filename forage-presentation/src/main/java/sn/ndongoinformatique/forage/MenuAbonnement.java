@@ -4,8 +4,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class MenuAbonnement {
+	private static final Logger LOGGER = Logger.getLogger(MenuAbonnement.class.getName());
 	static IServiceAbonnementImpl abonnementServiceImpl = new IServiceAbonnementImpl();
 	public static void affMenuAbonnement() {
 		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
@@ -17,31 +19,31 @@ public class MenuAbonnement {
 
 		Boolean continuer = true;
 		do {
-			System.out.println("-----------------------------------------------");
-			System.out.println("****  Gestion des abonnemets *****");
-			System.out.println();
-			System.out.println("1 : Ajouter un abonnement  ");
-			System.out.println("2 : Liste des abonnements ");
-			System.out.println("3 : Mise a jour d'un abonnement");
-			System.out.println("4 : Supprimer un abonnement ");
-			System.out.println("0 : Retour menu general ");
+			LOGGER.info("-----------------------------------------------");
+			LOGGER.info("****  Gestion des abonnemets *****");
+			LOGGER.info("\n");
+			LOGGER.info("1 : Ajouter un abonnement  ");
+			LOGGER.info("2 : Liste des abonnements ");
+			LOGGER.info("3 : Mise a jour d'un abonnement");
+			LOGGER.info("4 : Supprimer un abonnement ");
+			LOGGER.info("0 : Retour menu general ");
 
-			System.out.print("\nVotre choix : ");
+			LOGGER.info("\nVotre choix : ");
 			int rep = sc.nextInt();
 
 			switch (rep) {
 			case 0:
 				sc.nextLine();
-				System.out.println("Voulez vous vraimment retourner au menu general O/N ");
+				LOGGER.info("Voulez vous vraimment retourner au menu general O/N ");
 				en = sc.nextLine();
 				continuer = (en.equals("n") || en.equals("N"));
 				break;
 			case 1:
 				sc.nextLine();
-				System.out.println("******** Abonnement à ajouter *********");
-				System.out.println("Donner le code de l'abonnement  : ");
+				LOGGER.info("******** Abonnement à ajouter *********");
+				LOGGER.info("Donner le code de l'abonnement  : ");
 				int codeAbonnement = sc.nextInt();
-				System.out.println("Donner la date  : ");
+				LOGGER.info("Donner la date  : ");
 				String dateString = sc.nextLine();
 				try {
 					Date dateAbonnement=sdf.parse(dateString);
@@ -49,11 +51,11 @@ public class MenuAbonnement {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				System.out.println("Donner le code client  : ");
+				LOGGER.info("Donner le code client  : ");
 				String codeClient = sc.nextLine();
-				System.out.println("Donner le numero du compteur  : ");
+				LOGGER.info("Donner le numero du compteur  : ");
 				String codeCompteur = sc.nextLine();
-				System.out.println("Donner etat de labonnement  : ");
+				LOGGER.info("Donner etat de labonnement  : ");
 				String etatAbonnement = sc.nextLine();
 				clientForage=DaoUtilites.recupererClientForage(codeClient);
 				compteur=DaoUtilites.recupererCompteur(codeCompteur);
@@ -64,17 +66,17 @@ public class MenuAbonnement {
 
 				break;
 			case 3:
-				System.out.println(abonnementServiceImpl.lister());
+				LOGGER.info("Liste des abonnements"+abonnementServiceImpl.lister());
 				break;
 			case 4:
 				sc.nextLine();
-				System.out.println("******** Abonnement à supprimer *********");
-				System.out.println("Donner le code de l'abonnement a supprimer : ");
+				LOGGER.info("******** Abonnement à supprimer *********");
+				LOGGER.info("Donner le code de l'abonnement a supprimer : ");
 				int codeAbonnementASupprimer = sc.nextInt();
 			abonnementServiceImpl.supprimer(DaoUtilites.recupererAbonnement(codeAbonnementASupprimer));
 				break;
 			default:
-				System.out.println("Choix non diponible ");
+				LOGGER.info("Choix non diponible ");
 				break;
 			}
 		} while (continuer);
