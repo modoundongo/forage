@@ -9,8 +9,10 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
+import java.util.logging.*;
 
 public class MenuForage {
+	static Logger logger;
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args)  {
 		
@@ -68,16 +70,16 @@ public class MenuForage {
 	// fin client 
 
 	private static void affMenu() {
-		System.out.println("-----------------------------------------------");
-		System.out.println("**** Base de donnees gestion forage *****");
-		System.out.println();
-		System.out.println("1 : Gestion des clients ");
-		System.out.println("2 : Gestion des Compteurs ");
-		System.out.println("3 : Gestion Abonnements");
-		System.out.println("4 : Gestion Factures ");
-		System.out.println("0 : quitter l'application ");
+		logger.log(null,"-----------------------------------------------");
+		logger.log(null,"**** Base de donnees gestion forage *****");
+		logger.log(null,"\n");
+		logger.log(null,"1 : Gestion des clients ");
+		logger.log(null,"2 : Gestion des Compteurs ");
+		logger.log(null,"3 : Gestion Abonnements");
+		logger.log(null,"4 : Gestion Factures ");
+		logger.log(null,"0 : quitter l'application ");
 
-		System.out.print("\nVotre choix : ");
+		logger.log(null,"\nVotre choix : ");
 	}
 
 
