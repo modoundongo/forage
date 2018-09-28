@@ -10,11 +10,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class MenuForage {
-	private static final Logger LOGGER = Logger.getLogger(MenuForage.class.getName());
+	static Logger logger=Logger.getLogger("logg");
+	
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args)  {
+		
 		
 		String en;
 
@@ -26,7 +29,7 @@ public class MenuForage {
 			switch (rep) {
 			case 0:
 				sc.nextLine();
-				LOGGER.info("Voulez vous vraimment quitter l'application O/N ");
+				logger.log(Level.INFO,"Voulez vous vraimment quitter l'application O/N ");
 				en = sc.nextLine();
 				continuer = (en.equals("n") || en.equals("N"));
 			
@@ -70,16 +73,16 @@ public class MenuForage {
 	// fin client 
 
 	private static void affMenu() {
-		LOGGER.info("-----------------------------------------------");
-		LOGGER.info("**** Base de donnees gestion forage *****");
-		LOGGER.info("\n");
-		LOGGER.info("1 : Gestion des clients ");
-		LOGGER.info("2 : Gestion des Compteurs ");
-		LOGGER.info("3 : Gestion Abonnements");
-		LOGGER.info("4 : Gestion Factures ");
-		LOGGER.info("0 : quitter l'application ");
+		logger.log(Level.INFO,"-----------------------------------------------");
+		logger.log(Level.INFO,"**** Base de donnees gestion forage *****");
+		logger.log(Level.INFO,"\n");
+		logger.log(Level.INFO,"1 : Gestion des clients ");
+		logger.log(Level.INFO,"2 : Gestion des Compteurs ");
+		logger.log(Level.INFO,"3 : Gestion Abonnements");
+		logger.log(Level.INFO,"4 : Gestion Factures ");
+		logger.log(Level.INFO,"0 : quitter l'application ");
 
-		LOGGER.info("\nVotre choix : ");
+		logger.log(Level.INFO,"\nVotre choix : ");
 	}
 
 

@@ -5,11 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class MenuAbonnement {
-	private static final Logger LOGGER = Logger.getLogger(MenuAbonnement.class.getName());
+	
 	static IServiceAbonnementImpl abonnementServiceImpl = new IServiceAbonnementImpl();
 	public static void affMenuAbonnement() {
+		Logger logger=Logger.getLogger("logg");
 		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 		Scanner sc = new Scanner(System.in);
 		Abonnement abonnemenet;	
@@ -19,31 +21,31 @@ public class MenuAbonnement {
 
 		Boolean continuer = true;
 		do {
-			LOGGER.info("-----------------------------------------------");
-			LOGGER.info("****  Gestion des abonnemets *****");
-			LOGGER.info("\n");
-			LOGGER.info("1 : Ajouter un abonnement  ");
-			LOGGER.info("2 : Liste des abonnements ");
-			LOGGER.info("3 : Mise a jour d'un abonnement");
-			LOGGER.info("4 : Supprimer un abonnement ");
-			LOGGER.info("0 : Retour menu general ");
+			logger.log(Level.INFO,"-----------------------------------------------");
+			logger.log(Level.INFO,"****  Gestion des abonnemets *****");
+			logger.log(Level.INFO,"\n");
+			logger.log(Level.INFO,"1 : Ajouter un abonnement  ");
+			logger.log(Level.INFO,"2 : Liste des abonnements ");
+			logger.log(Level.INFO,"3 : Mise a jour d'un abonnement");
+			logger.log(Level.INFO,"4 : Supprimer un abonnement ");
+			logger.log(Level.INFO,"0 : Retour menu general ");
 
-			LOGGER.info("\nVotre choix : ");
+			logger.log(Level.INFO,"\nVotre choix : ");
 			int rep = sc.nextInt();
 
 			switch (rep) {
 			case 0:
 				sc.nextLine();
-				LOGGER.info("Voulez vous vraimment retourner au menu general O/N ");
+				logger.log(Level.INFO,"Voulez vous vraimment retourner au menu general O/N ");
 				en = sc.nextLine();
 				continuer = (en.equals("n") || en.equals("N"));
 				break;
 			case 1:
 				sc.nextLine();
-				LOGGER.info("******** Abonnement à ajouter *********");
-				LOGGER.info("Donner le code de l'abonnement  : ");
+				logger.log(Level.INFO,"******** Abonnement à ajouter *********");
+				logger.log(Level.INFO,"Donner le code de l'abonnement  : ");
 				int codeAbonnement = sc.nextInt();
-				LOGGER.info("Donner la date  : ");
+				logger.log(Level.INFO,"Donner la date  : ");
 				String dateString = sc.nextLine();
 				try {
 					Date dateAbonnement=sdf.parse(dateString);
@@ -51,11 +53,11 @@ public class MenuAbonnement {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				LOGGER.info("Donner le code client  : ");
+				logger.log(Level.INFO,"Donner le code client  : ");
 				String codeClient = sc.nextLine();
-				LOGGER.info("Donner le numero du compteur  : ");
+				logger.log(Level.INFO,"Donner le numero du compteur  : ");
 				String codeCompteur = sc.nextLine();
-				LOGGER.info("Donner etat de labonnement  : ");
+				logger.log(Level.INFO,"Donner etat de labonnement  : ");
 				String etatAbonnement = sc.nextLine();
 				clientForage=DaoUtilites.recupererClientForage(codeClient);
 				compteur=DaoUtilites.recupererCompteur(codeCompteur);
@@ -66,17 +68,17 @@ public class MenuAbonnement {
 
 				break;
 			case 3:
-				LOGGER.info("Liste des abonnements"+abonnementServiceImpl.lister());
+				logger.log(Level.INFO,"Liste des abonnements"+abonnementServiceImpl.lister());
 				break;
 			case 4:
 				sc.nextLine();
-				LOGGER.info("******** Abonnement à supprimer *********");
-				LOGGER.info("Donner le code de l'abonnement a supprimer : ");
+				logger.log(Level.INFO,"******** Abonnement à supprimer *********");
+				logger.log(Level.INFO,"Donner le code de l'abonnement a supprimer : ");
 				int codeAbonnementASupprimer = sc.nextInt();
 			abonnementServiceImpl.supprimer(DaoUtilites.recupererAbonnement(codeAbonnementASupprimer));
 				break;
 			default:
-				LOGGER.info("Choix non diponible ");
+				logger.log(Level.INFO,"Choix non diponible ");
 				break;
 			}
 		} while (continuer);
