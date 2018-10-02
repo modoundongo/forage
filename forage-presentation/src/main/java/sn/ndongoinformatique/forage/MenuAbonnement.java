@@ -8,10 +8,11 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 
 public class MenuAbonnement {
+	static Logger logger=Logger.getLogger("logg");
 	
 	static IServiceAbonnementImpl abonnementServiceImpl = new IServiceAbonnementImpl();
 	public static void affMenuAbonnement() {
-		Logger logger=Logger.getLogger("logg");
+		
 		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 		Scanner sc = new Scanner(System.in);
 		Abonnement abonnemenet;	
