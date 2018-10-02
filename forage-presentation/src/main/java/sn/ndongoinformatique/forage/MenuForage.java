@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 
 public class MenuForage {
-	static Logger logger=Logger.getLogger("logg");
+	 static Logger logger=Logger.getLogger("log");
 	
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args)  {
