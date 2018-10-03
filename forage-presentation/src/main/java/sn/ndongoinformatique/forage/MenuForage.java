@@ -10,11 +10,14 @@ import java.util.logging.*;
 
 import java.util.stream.Stream;
 
+import org.junit.Ignore;
+
 
 public class MenuForage {
-	 static Logger logger=Logger.getLogger("log");
+	 
 	
 	static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args)  {
 		
 		
@@ -28,7 +31,7 @@ public class MenuForage {
 			switch (rep) {
 			case 0:
 				sc.nextLine();
-				logger.log(Level.INFO,"Voulez vous vraimment quitter l'application O/N ");
+				System.out.println("Voulez vous vraimment quitter l'application O/N ");
 				en = sc.nextLine();
 				continuer = (en.equals("n") || en.equals("N"));
 			
@@ -36,7 +39,7 @@ public class MenuForage {
 			case 1:
 				MenuClient.affMenuClient();
 
-				System.out.print("\nVotre choix : ");
+				System.out.println("\nVotre choix : ");
 				break;
 			case 2:
 				MenuCompteur.affMenuCompteur();
@@ -72,16 +75,16 @@ public class MenuForage {
 	// fin client 
 
 	private static void affMenu() {
-		logger.log(Level.INFO,"-----------------------------------------------");
-		logger.log(Level.INFO,"**** Base de donnees gestion forage *****");
-		logger.log(Level.INFO,"\n");
-		logger.log(Level.INFO,"1 : Gestion des clients ");
-		logger.log(Level.INFO,"2 : Gestion des Compteurs ");
-		logger.log(Level.INFO,"3 : Gestion Abonnements");
-		logger.log(Level.INFO,"4 : Gestion Factures ");
-		logger.log(Level.INFO,"0 : quitter l'application ");
+		System.out.println("-----------------------------------------------");
+		System.out.println("**** Base de donnees gestion forage *****");
+		System.out.println("\n");
+		System.out.println("1 : Gestion des clients ");
+		System.out.println("2 : Gestion des Compteurs ");
+		System.out.println("3 : Gestion Abonnements");
+		System.out.println("4 : Gestion Factures ");
+		System.out.println("0 : quitter l'application ");
 
-		logger.log(Level.INFO,"\nVotre choix : ");
+		System.out.println("\nVotre choix : ");
 	}
 
 
