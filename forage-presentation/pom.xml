@@ -24,6 +24,10 @@
 			<groupId>sn.ndongoinformatique.forage</groupId>
 			<artifactId>forage-service</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>sn.ndongoinformatique.forage</groupId>
+			<artifactId>forage-domaine</artifactId>
+		</dependency>
 
 		<!-- ===== Bibliothèques tierces ===== -->
 		<!-- JUnit -->
