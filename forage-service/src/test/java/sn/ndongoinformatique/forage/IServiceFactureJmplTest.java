@@ -16,7 +16,7 @@ public class IServiceFactureJmplTest {
 	IServiceVillageImpl serviceVillage = new IServiceVillageImpl();
 	IServiceCompteurImpl serviceCompteur = new IServiceCompteurImpl();
 	IServiceFactureJmpl serviceFacture = new IServiceFactureJmpl();
-
+/*
 	@Test
 	public void testCreer() {
 		serviceVillage.creer(village);
@@ -26,7 +26,7 @@ public class IServiceFactureJmplTest {
 		serviceFacture.creer(facture);
 		serviceFacture.creer(facture1);
 	}
-
+*/
 	@Test
 	public void testMisAjour() {
 		serviceFacture.MisAjour(facture);
