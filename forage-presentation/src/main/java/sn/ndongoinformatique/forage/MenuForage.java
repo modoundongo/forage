@@ -9,7 +9,11 @@ import java.util.Scanner;
 import java.util.logging.*;
 
 import java.util.stream.Stream;
-
+/**
+ * Cette classe represente le menu general
+ * @author NdongoInfo
+ *
+ */
 
 public class MenuForage {
 	 
