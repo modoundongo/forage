@@ -1,6 +1,9 @@
 package sn.ndongoinformatique.forage;
 
 import java.util.ListIterator;
+/**
+ * Menu client
+ */
 import java.util.Scanner;
 
 public class MenuClient {

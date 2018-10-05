@@ -1,7 +1,13 @@
 package sn.ndongoinformatique.forage;
 
 import java.util.ListIterator;
+
 import java.util.Scanner;
+/**
+ * Menu Compteur
+ * @author NdongoInfo
+ *
+ */
 
 public class MenuCompteur {
 
