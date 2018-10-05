@@ -6,9 +6,9 @@ public class IServiceVillageImpl implements IServiceVillage {
 	private IDaoVillageImpl serviceVillageImp = new IDaoVillageImpl();
 
 	@Override
-	public void creer(Village t) {
+	public Boolean creer(Village t) {
 
-		serviceVillageImp.create(t);
+		 return serviceVillageImp.create(t);
 	}
 
 	@Override

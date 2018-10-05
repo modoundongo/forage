@@ -18,7 +18,7 @@ import java.util.List;
 public class IDaoAbonnementImpl implements IDaoAbonnement {
 	Connection con = MysqlConnection.getInstanceConnection();
 	@Override
-	public void create(Abonnement f) {
+	public Boolean create(Abonnement f) {
 		if(f.getClientForage().getCodePersonne()==null || f.getCompteur().getNumeroCompteur()==null) {
 			System.out.println("le client et le compteur doit exister");
 		}else {
@@ -43,7 +43,7 @@ public class IDaoAbonnementImpl implements IDaoAbonnement {
 			e1.printStackTrace();
 		}
 		}
-
+		return true;
 	}
 
 	@Override

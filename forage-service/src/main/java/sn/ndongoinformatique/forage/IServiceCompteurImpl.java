@@ -6,8 +6,8 @@ public class IServiceCompteurImpl implements IServiceCompteur {
 	IDaoCompteurImpl daoCompteur=new IDaoCompteurImpl();
 
 	@Override
-	public void creer(Compteur t) {
-		daoCompteur.create(t);
+	public Boolean creer(Compteur t) {
+		return daoCompteur.create(t);
 
 	}
 

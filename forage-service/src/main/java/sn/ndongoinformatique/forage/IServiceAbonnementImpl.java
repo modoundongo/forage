@@ -3,27 +3,38 @@ package sn.ndongoinformatique.forage;
 import java.util.List;
 
 public class IServiceAbonnementImpl implements IServiceAbonnement {
-IDaoAbonnementImpl daoAbonnement=new IDaoAbonnementImpl();
+	// IDaoAbonnementImpl daoAbonnement=new IDaoAbonnementImpl();
+	IServiceAbonnement serviceAbonnement;
+	
+
+	public IServiceAbonnement getServiceAbonnement() {
+		return serviceAbonnement;
+	}
+
+	public void setServiceAbonnement(IServiceAbonnement serviceAbonnement) {
+		this.serviceAbonnement = serviceAbonnement;
+	}
+
 	@Override
-	public void creer(Abonnement t) {
-		
- daoAbonnement.create(t);
+	public Boolean creer(Abonnement t) {
+
+		return serviceAbonnement.creer(t);
 	}
 
 	@Override
 	public void MisAjour(Abonnement t) {
-		daoAbonnement.update(t);
+		serviceAbonnement.MisAjour(t);
 	}
 
 	@Override
 	public List<Abonnement> lister() {
-		
-		return daoAbonnement.list();
+
+		return serviceAbonnement.lister();
 	}
 
 	@Override
 	public void supprimer(Abonnement t) {
-		daoAbonnement.delete(t);
+		serviceAbonnement.supprimer(t);
 
 	}
 

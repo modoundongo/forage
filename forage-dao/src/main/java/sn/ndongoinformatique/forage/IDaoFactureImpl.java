@@ -21,7 +21,7 @@ public class IDaoFactureImpl implements IDaoFacture {
 	}
 
 	@Override
-	public void create(Facture f) {
+	public Boolean create(Facture f) {
 		
 		if(f.getAbonnement()==null) {
 			System.out.println("l'abonnement ne doit pas etre null  ");
@@ -41,12 +41,15 @@ public class IDaoFactureImpl implements IDaoFacture {
 			//Etape 3 : exécution de la requête
 			preparedStatement.executeUpdate();
 			System.out.println("Insertion de l'abonnement reussi");
+			return true;
 		} catch (SQLException e1) {
 			System.out.println("Erreur pour linsertion de l'abonnement");
 			e1.printStackTrace();
+			
 		}
+		
 		}
-
+		return true;
 	}
 
 	@Override

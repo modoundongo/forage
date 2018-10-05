@@ -10,7 +10,7 @@ import java.util.List;
  *
  */
 public interface IDaoGenerique<F>{
-	public void create(F f);
+	public Boolean create(F f);
 	public void update(F f);
 	public List<F> list();
 	public void delete(F f);

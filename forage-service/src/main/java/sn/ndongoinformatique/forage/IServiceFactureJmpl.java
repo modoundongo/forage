@@ -5,9 +5,9 @@ import java.util.List;
 public class IServiceFactureJmpl implements IServiceFacture {
 IDaoFactureImpl daoFacture=new IDaoFactureImpl();
 	@Override
-	public void creer(Facture t) {
+	public Boolean creer(Facture t) {
 		
-daoFacture.create(t);
+return daoFacture.create(t);
 	}
 
 	@Override

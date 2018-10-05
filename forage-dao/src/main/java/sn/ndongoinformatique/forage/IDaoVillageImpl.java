@@ -9,7 +9,7 @@ import java.util.List;
 public class IDaoVillageImpl implements IDaoVillage {
 	Connection con = MysqlConnection.getInstanceConnection();
 	@Override
-	public void create(Village v) {
+	public Boolean create(Village v) {
 		try {
 			//Etape1 : Création de la zone de requête
 			String sql = "INSERT INTO villages VALUES(?,?,?)";
@@ -28,7 +28,7 @@ public class IDaoVillageImpl implements IDaoVillage {
 			e1.printStackTrace();
 		}
 		
-
+		return true;
 		} 
 	
 

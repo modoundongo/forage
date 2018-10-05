@@ -31,7 +31,7 @@ public class IDaoClientForageImpl implements IDaoClientForage  {
 	 */
 	
 	@Override
-	public void create(ClientForage f) {
+	public Boolean create(ClientForage f) {
 		IDaoVillageImpl villageImpl=new IDaoVillageImpl();
 		
 		try {
@@ -53,7 +53,7 @@ public class IDaoClientForageImpl implements IDaoClientForage  {
 			System.out.println("Erreur à l'insertion");
 			e1.printStackTrace();
 		}
-		
+		return true;
 
 		} 
 	

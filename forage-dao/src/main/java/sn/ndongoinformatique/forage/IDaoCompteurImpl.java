@@ -12,7 +12,7 @@ public class IDaoCompteurImpl implements IDaoCompteur {
 	Connection con = MysqlConnection.getInstanceConnection();
 
 	@Override
-	public void create(Compteur f) {
+	public Boolean create(Compteur f) {
 		try {
 			// Etape1 : Création de la zone de requête
 			String sql = "INSERT INTO compteurs VALUES(?,?,?)";
@@ -28,7 +28,7 @@ public class IDaoCompteurImpl implements IDaoCompteur {
 			System.out.println("Erreur à l'insertion");
 			e1.printStackTrace();
 		}
-
+		return true;
 	}
 
 	@Override

@@ -6,9 +6,9 @@ public class IServiceClientForageImpl implements IServiceClientForage {
 	IDaoClientForageImpl daoClient =new IDaoClientForageImpl();
 
 	@Override
-	public void creer(ClientForage t) {
+	public Boolean creer(ClientForage t) {
 		
-daoClient.create(t);
+return daoClient.create(t);
 	}
 
 	@Override
