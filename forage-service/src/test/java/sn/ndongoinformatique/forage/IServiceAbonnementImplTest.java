@@ -4,20 +4,24 @@ import static org.junit.Assert.*;
 
 import java.sql.Date;
 
+import static org.mockito.Mockito.*;
 import org.junit.Test;
+import org.mockito.Mockito;
+import org.mockito.internal.stubbing.answers.CallsRealMethods;
 
 public class IServiceAbonnementImplTest {
 	
 	IServiceAbonnementImpl serviceAbonnement=new IServiceAbonnementImpl();
 	
+IDaoAbonnement mockAbonnement=mock(IDaoAbonnement.class,"mockAbon");
 	ClientForage client = DaoUtilites.recupererClientForage("567");
 	Compteur compteur = DaoUtilites.recupererCompteur("c2");
 	Date da=new Date(0);
-	Abonnement abonnement =new Abonnement(457,client,compteur,da,"actif");
+	Abonnement abonnement =new Abonnement(578,client,compteur,da,"actif");
 
 	@Test
 	public void testCreer() {
-	serviceAbonnement.creer(abonnement);
+	serviceAbonnement.creer(abonnement);	
 	}
 
 	@Test
@@ -27,6 +31,7 @@ public class IServiceAbonnementImplTest {
 
 	@Test
 	public void testLister() {
+		//when(mockAbonnement.lister()).thenReturn(serviceAbonnement.lister());
 		serviceAbonnement.lister();
 	}
 

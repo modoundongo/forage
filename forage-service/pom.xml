@@ -15,16 +15,24 @@
 	<name>forage-service</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
-	<dependency>
-	<groupId>sn.ndongoinformatique.forage</groupId>
-	<artifactId>forage-dao</artifactId>
-	</dependency>
+		<dependency>
+			<groupId>sn.ndongoinformatique.forage</groupId>
+			<artifactId>forage-dao</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
