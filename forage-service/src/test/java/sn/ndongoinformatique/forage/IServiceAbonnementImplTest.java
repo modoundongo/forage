@@ -11,7 +11,8 @@ import org.mockito.internal.stubbing.answers.CallsRealMethods;
 
 public class IServiceAbonnementImplTest {
 	
-	IServiceAbonnementImpl serviceAbonnement=new IServiceAbonnementImpl();
+	//IServiceAbonnementImpl serviceAbonnement=new IServiceAbonnementImpl();
+	IServiceAbonnement serviceAbonnement;
 	
 IDaoAbonnement mockAbonnement=mock(IDaoAbonnement.class,"mockAbon");
 	ClientForage client = DaoUtilites.recupererClientForage("567");
